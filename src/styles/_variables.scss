@@ -1,0 +1,143 @@
+// Gen-lab color variables
+
+$GL-Blue: #364BC5;
+$GL-Green: #2E8B57;
+$GL-BG_White:#FDF6EC;
+$GL-Black:#333333;
+$GL-Yellow:#FACC15;
+
+// Spacing Sizes
+$spacing-sm: 0.5rem;  // 8px
+$spacing-md: 1rem;    // 16px
+$spacing-lg: 2rem;    // 32px
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 980px;
+
+// Define font size classes based on device width
+.font-size-sm {
+    font-size: 14px;
+  
+    @media (min-width: 576px) {
+      font-size: 16px;
+    }
+  
+    @media (min-width: 980px) {
+      font-size: 18px;
+    }
+  }
+  
+  .font-size-md {
+    font-size: 16px;
+  
+    @media (min-width: 576px) {
+      font-size: 18px;
+    }
+  
+    @media (min-width: 980px) {
+      font-size: 20px;
+    }
+  }
+  
+  .font-size-lg {
+    font-size: 18px;
+  
+    @media (min-width: 576px) {
+      font-size: 22px;
+    }
+  
+    @media (min-width: 980px) {
+      font-size: 26px;
+    }
+  }
+
+// padding utilities
+.p-sm {
+    padding: $spacing-sm;
+  }
+  .p-md {
+    padding: $spacing-md;
+  }
+  .p-lg {
+    padding: $spacing-lg;
+  }
+  
+  // Padding Horizontal
+  .px-sm {
+    padding-left: $spacing-sm;
+    padding-right: $spacing-sm;
+  }
+  .px-md {
+    padding-left: $spacing-md;
+    padding-right: $spacing-md;
+  }
+  .px-lg {
+    padding-left: $spacing-lg;
+    padding-right: $spacing-lg;
+  }
+  
+  // Padding Vertical
+  .py-sm {
+    padding-top: $spacing-sm;
+    padding-bottom: $spacing-sm;
+  }
+  .py-md {
+    padding-top: $spacing-md;
+    padding-bottom: $spacing-md;
+  }
+  .py-lg {
+    padding-top: $spacing-lg;
+    padding-bottom: $spacing-lg;
+  }
+
+// margin utilities
+
+.m-sm {
+    margin: $spacing-sm;
+  }
+  .m-md {
+    margin: $spacing-md;
+  }
+  .m-lg {
+    margin: $spacing-lg;
+  }
+  
+  // Margin Horizontal
+  .mx-sm {
+    margin-left: $spacing-sm;
+    margin-right: $spacing-sm;
+  }
+  .mx-md {
+    margin-left: $spacing-md;
+    margin-right: $spacing-md;
+  }
+  .mx-lg {
+    margin-left: $spacing-lg;
+    margin-right: $spacing-lg;
+  }
+  
+  // Margin Vertical
+  .my-sm {
+    margin-top: $spacing-sm;
+    margin-bottom: $spacing-sm;
+  }
+  .my-md {
+    margin-top: $spacing-md;
+    margin-bottom: $spacing-md;
+  }
+  .my-lg {
+    margin-top: $spacing-lg;
+    margin-bottom: $spacing-lg;
+  }
+
+  
+// take a note of everything we have made here:
+// Utility	                                        Description
+// font-size-sm, font-size-md, font-size-lg	    Responsive text sizes
+// p-sm, p-md, p-lg	                            Padding all sides
+// px-sm, px-md, px-lg	                            Padding left + right
+// py-sm, py-md, py-lg	                            Padding top + bottom
+// m-sm, m-md, m-lg	                            Margin all sides
+// mx-sm, mx-md, mx-lg	                            Margin left + right
+// my-sm, my-md, my-lg	                            Margin top + bottom
