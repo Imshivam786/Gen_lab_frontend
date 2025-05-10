@@ -1,0 +1,39 @@
+<!-- home.component.html -->
+<div class="main-wrapper">
+  <section class="flex items-center bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12">
+      <!-- Text Content -->
+      <div class="lg:flex-1">
+        <div class="space-y-6">
+          <!-- Heading -->
+          <h1 class="text-2xl sm:text-2xl font-bold text-gray-900">
+            Discover Innovative Projects
+          </h1>
+
+          <!-- Sub Heading -->
+          <p class="text-xl text-gray-600">
+            Explore groundbreaking ideas in
+            <br>
+            <span class="text-indigo-600 font-medium typing-container inline-block min-w-[200px]">
+              {{ currentText }}<span class="typing-cursor">|</span>
+            </span>
+          </p>
+
+          <!-- Button -->
+          <button
+          [routerLink]="'projects'"
+            class="bg-indigo-600 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-indigo-700 transition-colors">
+            Browse Projects
+          </button>
+        </div>
+      </div>
+
+      <!-- Image Section -->
+      <div class="lg:flex-1">
+        <img src="/assets/hero_image.png" alt="Project categories illustration"
+          class="w-full max-w-xl lg:max-w-none mx-auto h-auto rounded-lg">
+      </div>
+    </div>
+  </section>
+</div>
+<app-best-projects></app-best-projects>

@@ -1,0 +1,51 @@
+<!-- order-details-modal.component.html -->
+<div *ngIf="visible" class="fixed inset-0 bg-black bg-opacity-50 z-[100] flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-6">
+            <!-- Header -->
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Order Details</h3>
+                <button (click)="close.emit()" class="text-gray-500 hover:text-gray-700">
+                    &times;
+                </button>
+            </div>
+
+            <!-- Content -->
+            <div *ngIf="order" class="space-y-4">
+                <!-- Delivery Info -->
+                <div class="border-b pb-4">
+                    <h4 class="font-medium mb-2">Delivery Information</h4>
+                    <p class="text-sm text-gray-600">
+                        {{order.deliveryDate ? 'Delivered on ' + (order.deliveryDate | date) : 'Expected by ' +
+                        (order.expectedDate | date)}}
+                    </p>
+                    <div class="mt-2 text-sm text-gray-600">
+                        {{order.address}}
+                    </div>
+                </div>
+
+                <!-- Items -->
+                <div class="border-b pb-4">
+                    <h4 class="font-medium mb-2">Order Items</h4>
+                    <div class="space-y-2">
+                        <div *ngFor="let item of order.items" class="flex items-center gap-4">
+                            <img [src]="item.image" class="w-16 h-16 object-contain">
+                            <div>
+                                <div class="text-sm font-medium">{{item.name}}</div>
+                                <div class="text-sm text-gray-600">Qty: {{item.quantity}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Invoice -->
+                <div>
+                    <h4 class="font-medium mb-2">Invoice</h4>
+                    <a [href]="order.invoiceUrl" class="text-indigo-600 hover:text-indigo-800 text-sm" download>
+                        Download Invoice (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<!-- order-card.component.html -->
+<div class="border rounded-lg p-4">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center">
+        <div class="flex-1">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="text-sm font-medium text-gray-900">Order #{{order.id}}</span>
+                <span class="text-sm text-gray-500">{{order.date | date}}</span>
+                <span class="px-2 py-1 text-xs rounded-full" [ngClass]="{
+                  'bg-green-100 text-green-800': order.status === 'Delivered',
+                  'bg-blue-100 text-blue-800': order.status !== 'Delivered'
+                }">
+                    {{order.status}}
+                </span>
+            </div>
+
+            <div class="text-sm text-gray-600">
+                {{order.items.length}} items • Total: ₹{{order.total | number}}
+            </div>
+        </div>
+
+        <button (click)="trackOrder(order.trackingUrl)"
+            class="mt-2 sm:mt-0 px-4 py-2 text-sm font-medium text-indigo-600 hover:text-indigo-800">
+            Track Order
+        </button>
+    </div>
+</div>

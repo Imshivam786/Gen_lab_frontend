@@ -1,0 +1,39 @@
+<!-- contact.component.html -->
+<div class="bg-gray-50 py-4 px-4 sm:px-6 lg:px-8 card-wrapper">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div class="flex flex-col">
+            <img src="/assets/genlab.svg" alt="Gen-Lab" class="h-12 w-auto self-start">
+            <p class="text-sm font-bold text-gray-900 self-start">
+                "Where Ideas meet real-world execution"
+            </p>
+        </div>
+
+        <!-- Second Column - Helpful Links -->
+        <div class="flex flex-col space-y-4">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Helpful Links</h3>
+            <ul class="space-y-3">
+                <li *ngFor="let link of links" class="flex items-center">
+                    <svg class="w-4 h-4 mr-2 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 transition-colors">{{ link }}</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Third Column - Social Links -->
+        <div class="flex flex-col space-y-4">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Let's talk</h3>
+            <div class="flex space-x-4">
+                <a *ngFor="let social of socialLinks" [href]="social.url" target="_blank"
+                    class="text-gray-600 hover:text-indigo-600 transition-colors">
+                    <span class="sr-only">{{ social.name }}</span>
+                    <svg [class]="'w-6 h-6' + ' ' + social.iconClass" fill="currentColor" viewBox="0 0 24 24"
+                        aria-hidden="true">
+                        <path [attr.d]="social.iconPath" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

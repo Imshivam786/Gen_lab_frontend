@@ -1,0 +1,51 @@
+<div class="bg-white wrapper-div">
+    <div class="mx-auto max-w-2xl px-4 sm:px-6 sm:py-8 lg:max-w-7xl lg:px-8">
+      
+      <!-- Category Section -->
+      <div *ngFor="let category of categories" class="mb-4">
+        <!-- Category Header -->
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-lg font-bold text-gray-900">{{ category.name }}</h3>
+        </div>
+  
+        <!-- Projects Container -->
+        <div class="relative">
+          <!-- Mobile Horizontal Scroll -->
+          <div class="flex lg:hidden overflow-x-auto pb-4 space-x-4 scroll-smooth snap-x">
+            <app-project-card 
+              *ngFor="let project of category.projects" 
+              class="flex-shrink-0 snap-center">
+            </app-project-card>
+            
+            <!-- See More Card (Mobile) -->
+            <div class="w-128 flex-shrink-0 flex items-center justify-center">
+              <a href="#" class="flex flex-col items-center text-indigo-600">
+                <span class="text-sm">See All</span>
+                <svg class="w-6 h-6 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+  
+          <!-- Desktop Grid -->
+          <div class="hidden lg:grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            <app-project-card 
+              *ngFor="let project of category.projects">
+            </app-project-card>
+          </div>
+  
+          <!-- Show More Footer (Desktop) -->
+          <div class="hidden lg:flex justify-end mt-4">
+            <a href="#" class="flex items-center text-indigo-600 hover:text-indigo-800">
+              Show All {{ category.name }}
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>

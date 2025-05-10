@@ -35,11 +35,13 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/app/assets",
+                "output": "/assets/"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -94,10 +96,12 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/app/assets/",
+                "output": "/assets/"
               }
             ],
             "styles": [
+              "src/styles.css",
               "src/styles.scss"
             ],
             "scripts": []

@@ -1,0 +1,88 @@
+<div class="flex flex-col md:flex-row gap-4 p-2 border-b border-gray-200 hover:bg-gray-50 transition-colors">
+    <!-- Left Section - Image & Mobile Quantity -->
+    <div class="flex items-start gap-4">
+      <img src="assets/hero_image.png" 
+           alt="Product image"
+           class="w-20 h-20 object-contain border rounded-lg">
+  
+      <!-- Mobile Quantity Controls -->
+      <div class="md:hidden flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <button (click)="updateQuantity(-1)"
+                  class="w-8 h-8 rounded border flex items-center justify-center hover:bg-gray-100">
+            -
+          </button>
+          <span class="w-8 text-center">{{ item.quantity }}</span>
+          <button (click)="updateQuantity(1)"
+                  class="w-8 h-8 rounded border flex items-center justify-center hover:bg-gray-100">
+            +
+          </button>
+          <h3 class="text-md font-medium text-gray-900 mb-1">{{ item.name }}</h3>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Right Section - Details -->
+    <div class="flex-1">
+      <!-- Title & Mobile Actions -->
+      <div class="flex justify-between items-start">
+        
+        <!-- Mobile Actions -->
+        <div class="md:hidden flex gap-2">
+          <button (click)="buyNow()" class="text-blue-600 text-sm hover:text-blue-800">
+            Buy Now
+          </button>
+          <span class="text-gray-300">|</span>
+          <button (click)="removeItem()" class="text-gray-600 text-sm hover:text-red-600">
+            Remove
+          </button>
+          <span class="text-gray-300">|</span>
+          <button (click)="removeItem()" class="text-gray-600 text-sm hover:text-red-600">
+            Save as Favorites
+          </button>
+        </div>
+      </div>
+  
+      <!-- Pricing -->
+      <div class="flex items-baseline gap-2 mb-2">
+        <span class="text-xl font-bold text-gray-900">₹{{ calculateDiscountedPrice() | number }}</span>
+        <span class="text-sm text-gray-500 line-through">₹{{ item.price | number }}</span>
+        <span class="text-sm text-green-600">{{ item.discount }}% off</span>
+      </div>
+  
+      <!-- Delivery Info -->
+      <p class="text-sm text-gray-600 mb-2">
+        Delivery by {{ item.deliveryDate | date }}
+        <span class="font-medium">| Free</span>
+      </p>
+  
+      <!-- Desktop Actions -->
+      <div class="hidden md:flex items-center gap-4 mt-2">
+        <!-- Quantity Controls -->
+        <div class="flex items-center gap-2">
+          <button (click)="updateQuantity(-1)"
+                  class="w-8 h-8 rounded border flex items-center justify-center hover:bg-gray-100">
+            -
+          </button>
+          <span class="w-8 text-center">{{ item.quantity }}</span>
+          <button (click)="updateQuantity(1)"
+                  class="w-8 h-8 rounded border flex items-center justify-center hover:bg-gray-100">
+            +
+          </button>
+        </div>
+  
+        <!-- Action Group -->
+        <div class="flex items-center gap-4">
+          <button (click)="buyNow()" class="text-blue-600 text-sm hover:text-blue-800">
+            Buy Now
+          </button>
+          <button (click)="removeItem()" class="text-gray-600 text-sm hover:text-red-600">
+            Remove
+          </button>
+          <button class="text-gray-600 text-sm hover:text-blue-600">
+            Save as Favorites
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

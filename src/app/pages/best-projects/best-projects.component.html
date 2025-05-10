@@ -1,0 +1,21 @@
+<div class="bg-white wrapper-div">
+    <div class="mx-auto max-w-2xl px-4 sm:px-6 sm:py-8 lg:max-w-7xl lg:px-8">
+        <!-- Heading with Dropdown -->
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-md-lg font-bold tracking-tight text-gray-900">Our Best Projects</h2>
+            <select class="border rounded-md px-3 py-1 text-sm">
+                <option>All Categories</option>
+                <option>AI Development</option>
+                <option>Web Applications</option>
+                <option>Mobile Apps</option>
+            </select>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            <app-project-card 
+                *ngFor="let _ of placeholderArray"
+            ></app-project-card>
+        </div>
+    </div>
+</div>

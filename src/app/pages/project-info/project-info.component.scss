@@ -1,0 +1,26 @@
+.scroll-smooth {
+    scroll-behavior: smooth;
+  }
+  
+  .snap-x {
+    scroll-snap-type: x mandatory;
+  }
+  
+  .snap-start {
+    scroll-snap-align: start;
+  }
+  
+  /* Hide scrollbar while allowing scroll */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Optional: Add hover zoom effect */
+  .cursor-zoom-in:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+  }
+
+  .main_image{
+    max-height: 30vh;
+  }

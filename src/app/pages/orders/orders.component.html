@@ -1,0 +1,19 @@
+<!-- order-history.component.html -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h1 class="text-3xl font-bold text-gray-900 mb-8">Your Orders</h1>
+  
+    <div class="grid gap-6">
+      <app-order-card 
+        *ngFor="let order of orders"
+        [order]="order"
+        (click)="openOrderDetails(order)"
+        class="cursor-pointer hover:bg-gray-50 transition-colors">
+      </app-order-card>
+    </div>
+  
+    <app-order-details-modal 
+      [visible]="showOrderDetails"
+      [order]="selectedOrder"
+      (close)="showOrderDetails = false">
+    </app-order-details-modal>
+  </div>
