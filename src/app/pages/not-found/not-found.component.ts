@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './not-found.component.scss'
 })
 export class NotFoundComponent {
+  currentUrl: string;
 
+  constructor(private location: Location) {
+    this.currentUrl = this.location.path();
+  }
 }

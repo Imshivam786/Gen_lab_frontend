@@ -10,6 +10,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { OrdersComponent } from './pages/orders/orders.component';
 import { ProjectInfoComponent } from './pages/project-info/project-info.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { TermsConditionComponent } from './pages/terms-condition/terms-condition.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 const routes: Routes = [
@@ -23,7 +25,9 @@ const routes: Routes = [
   {path:'category-project',component: ProjectsComponent},
   {path:'user-profile',component: UserProfileComponent},
   {path:'about-us', component: AboutUsComponent},
-  {path:'*', component: NotFoundComponent}
+  {path:'services', component: ServicesComponent},
+  {path:'terms-condition', component: TermsConditionComponent},
+  {path:'**', component: NotFoundComponent}
 ];
 
 @NgModule({

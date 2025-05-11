@@ -7,9 +7,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './watsapp.component.scss',
 })
 export class WatsappComponent {
-  @Input() phoneNumber: string = '911234567890'; // Default number
-  @Input() message: string = 'Hi Genlab Team, I need help with...'; // Default message
-  @Input() bottomSpacing: string = '20'; // Default bottom spacing (in rem units)
+  @Input() phoneNumber: string = '8905968789';
+  @Input() message: string = 'Hi Genlab Team, I need help with...';
+  @Input() bottomSpacing: string = '20';
 
   get whatsappUrl(): string {
     const encodedMessage = encodeURIComponent(this.message);

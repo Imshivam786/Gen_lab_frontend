@@ -74,11 +74,11 @@
         <div class="space-y-1 px-2 pt-2 pb-3">
             <a [routerLink]="'best-projects'" class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white" (click)="toggle_mobile_menu()"
                 aria-current="page">Best Projects</a>
-            <a [routerLink]="'best-projects'" class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white" (click)="toggle_mobile_menu()">All
+            <a [routerLink]="'projects'" class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white" (click)="toggle_mobile_menu()">All
                 Projects</a>
-            <a [routerLink]="'best-projects'"
+            <a [routerLink]="'services'"
                 class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white" (click)="toggle_mobile_menu()">Services</a>
-            <a [routerLink]="'best-projects'"
+            <a [routerLink]="'terms-condition'"
                 class="block rounded-md px-3 py-2 text-base font-medium hover:bg-gray-700 hover:text-white" (click)="toggle_mobile_menu()">Terms &
                 Conditions</a>
             <a [routerLink]="'about-us'"
@@ -87,4 +87,8 @@
     </div>
 </nav>
 
-<app-auth-form #authModal (closed)="is_user_menu_open = false"></app-auth-form>
+<app-auth-form #authModal (closed)="is_user_menu_open = false" (forgotPassword)="showForgotPasswordModal()"></app-auth-form>
+<app-forgot-password 
+  #forgotPasswordModal 
+  (closed)="is_user_menu_open = false">
+</app-forgot-password>

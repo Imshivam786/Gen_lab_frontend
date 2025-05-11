@@ -25,6 +25,10 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { OrderCardComponent } from './components/order-card/order-card.component';
 import { OrderDetailsModalComponent } from './components/order-details-modal/order-details-modal.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ServicesComponent } from './pages/services/services.component';
+import { TermsConditionComponent } from './pages/terms-condition/terms-condition.component';
+import { ServiceDownComponent } from './components/service-down/service-down.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +52,11 @@ import { OrderDetailsModalComponent } from './components/order-details-modal/ord
     UserProfileComponent,
     AboutUsComponent,
     OrderCardComponent,
-    OrderDetailsModalComponent
+    OrderDetailsModalComponent,
+    ForgotPasswordComponent,
+    ServicesComponent,
+    TermsConditionComponent,
+    ServiceDownComponent
   ],
   imports: [
     BrowserModule,

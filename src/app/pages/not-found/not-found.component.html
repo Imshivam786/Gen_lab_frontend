@@ -1,1 +1,43 @@
-<p>not-found works!</p>
+<!-- not-found.component.html -->
+<div class="min-h-screen bg-gray-50 flex flex-col items-center justify-center px-4 py-8">
+    <div class="max-w-3xl text-center">
+      <!-- Status Icon -->
+      <div class="mb-6 text-indigo-600">
+        <svg class="w-32 h-32 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" 
+                d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+  
+      <!-- Status Indicator -->
+      <div class="inline-flex items-center px-4 py-2 rounded-full bg-indigo-100 mb-6">
+        <span class="text-indigo-600 font-medium text-sm">404 ERROR</span>
+      </div>
+  
+      <!-- Message -->
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Page Not Found
+      </h1>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        The page you're looking for doesn't exist or has been moved. Let's get you back on track.
+      </p>
+  
+      <!-- Action Button -->
+      <div class="flex justify-center gap-4">
+        <a routerLink="/" 
+           class="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors font-medium">
+          Return to Homepage
+        </a>
+        <a routerLink="/contact" 
+           class="px-6 py-3 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50 transition-colors font-medium">
+          Contact Support
+        </a>
+      </div>
+  
+      <!-- Technical Details -->
+      <div class="mt-8 text-sm text-gray-500">
+        <p>Requested URL: {{ currentUrl }}</p>
+        <p class="mt-2">Error Code: 404 - PAGE_NOT_FOUND</p>
+      </div>
+    </div>
+  </div>

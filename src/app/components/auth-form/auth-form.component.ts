@@ -13,7 +13,7 @@ export class AuthFormComponent {
   isLoginMode = true;
   showOtpField = false;
   showPasswordField = false;
-  otpTimer = 60;
+  otpTimer = 30;
 
   
   loginForm: FormGroup;
@@ -82,7 +82,7 @@ export class AuthFormComponent {
   }
 
   private startOtpTimer() {
-    this.otpTimer = 60;
+    this.otpTimer = 30;
     const interval = setInterval(() => {
       this.otpTimer--;
       if (this.otpTimer <= 0) clearInterval(interval);
@@ -94,5 +94,14 @@ export class AuthFormComponent {
     this.showPasswordField = false;
     this.loginForm.reset();
     this.signupForm.reset();
+  }
+
+  // Add this output
+  @Output() forgotPassword = new EventEmitter<void>();
+
+  // Add this method
+  openForgotPassword() {
+    this.close();
+    this.forgotPassword.emit();
   }
 }
